@@ -29,3 +29,6 @@ When your .pd file is ready to build a .bin, type
     make
     
 If all is successful, your .bin file will be in the `build/build` folder.
+
+# Resources
+[Pure Data Manual](http://write.flossmanuals.net/pure-data/introduction2/)
