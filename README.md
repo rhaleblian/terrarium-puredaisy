@@ -10,7 +10,8 @@ Your local machine needs:
 * Python packages `enum` and `jinja2`
 * The `gcc-arm-none-eabi` compiler toolchain
 
-This template has been tested on macOS and Windows Subsystem for Linux.
+This template has been tested on macOS, Windows Subsystem for Linux
+and Ubuntu.
 
 # Setup
 To start a new patch, create a new repository using this one as a template.
