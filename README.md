@@ -1,2 +1,2 @@
 # terrarium-puredaisy
-Template for downloading Pure Data patches to Terrarium.
+Template for creating Terrarium/Daisy programs from Pure Data patches.
