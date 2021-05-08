@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [ actions ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+      
+    steps:
+
+    - name: Situation?
+      run: |
+        which python
+        python -V
+
+    - name: Install additional packages
+      run:
+        sudo apt install python-enum34 python-jinja2
+        
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Checkout submodules
+      run: |
+        git submodule init --recursive
+        git submodule update --recursive
+
+    - name: Install arm-none-eabi-gcc toolchain
+      uses: fiam/arm-none-eabi-gcc@v1
+      with:
+        release: '9-2019-q4'
+        
+    - name: Build libraries
+      run:
+        make -C pd2dsy/libdaisy
+
+    - name: Generate code
+      run: |
+        python pd2dsy/pd2dsy.py passthru.pd -o ../build
+        find build
+
+    - name: Build binary
+      run:
+        make -C build
