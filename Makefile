@@ -7,9 +7,10 @@ binary:
 
 bootstrap:
 	git submodule init
-	git submodule update --recursive
+	git submodule update
+	cd pd2dsy && git submodule init
+	cd pd2dsy && git submodule update	
 	make -C pd2dsy/libdaisy
 
 clean:
 	rm -r build
-
