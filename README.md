@@ -14,9 +14,9 @@ This template has been tested on macOS, Windows Subsystem for Linux
 and Ubuntu.
 
 # Setup
-To start a new patch, create a new repository using this one as a template.
+Create a new repository using this one as a template.
 
-Clone your new repository and do a one time bootstrap:
+Clone your new repository locally and do a one time bootstrap:
 
     make bootstrap
 
