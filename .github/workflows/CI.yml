@@ -43,6 +43,6 @@ jobs:
         find build
 
     - name: Build binary
-      run:
+      run: |
         make -C build
         find build/build
