@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ actions ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -13,11 +13,6 @@ jobs:
       
     steps:
 
-    - name: Situation?
-      run: |
-        which python
-        python -V
-
     - name: Install additional packages
       run:
         sudo apt install python-enum34 python-jinja2
@@ -27,8 +22,11 @@ jobs:
 
     - name: Checkout submodules
       run: |
-        git submodule init --recursive
-        git submodule update --recursive
+        git submodule init
+        git submodule update
+        cd pd2dsy
+        git submodule init
+        git submodule update
 
     - name: Install arm-none-eabi-gcc toolchain
       uses: fiam/arm-none-eabi-gcc@v1
@@ -47,3 +45,4 @@ jobs:
     - name: Build binary
       run:
         make -C build
+        find build/build
