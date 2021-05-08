@@ -1,7 +1,7 @@
 TARGET=passthru
 
 binary:
-	python pd2dsy/pd2dsy.py $(TARGET).pd -o ../build
+	python pd2dsy/pd2dsy.py --board petal --out_dir ../build $(TARGET).pd
 	make -C build
 	ls build/build/*.bin
 
