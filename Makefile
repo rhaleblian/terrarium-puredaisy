@@ -1,9 +1,10 @@
 TARGET=passthru
 
-binary:
-	python pd2dsy/pd2dsy.py --board petal --out_dir ../build $(TARGET).pd
+$(TARGET).bin: $(TARGET).pd
+	- rm -r build $(TARGET).bin
+	python pd2dsy/pd2dsy.py --board petal --out_dir $(PWD)/build $(TARGET).pd
 	make -C build
-	ls build/build/*.bin
+	cp build/build/$(TARGET).bin .
 
 bootstrap:
 	git submodule init
@@ -13,4 +14,6 @@ bootstrap:
 	make -C pd2dsy/libdaisy
 
 clean:
-	rm -r build
+	- rm -r build $(TARGET).bin
+
+.PHONY: clean bootstrap
