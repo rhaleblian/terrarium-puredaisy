@@ -14,7 +14,7 @@ This template has been tested on macOS, Windows Subsystem for Linux
 and Ubuntu.
 
 # Setup
-Create a new repository using this one as a template.
+Create a new GitHub repository using this one as a template.
 
 Clone your new repository locally and do a one time bootstrap:
 
@@ -32,3 +32,8 @@ If all is successful, your .bin file will be in the `build/build` folder.
 
 # Resources
 [Pure Data Manual](http://write.flossmanuals.net/pure-data/introduction2/)
+
+# Additional notes
+On Linuces, the required Python packages can be gotten with
+
+    pip3 install enum34 jinja2
