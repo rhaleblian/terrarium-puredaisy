@@ -12,7 +12,7 @@ bootstrap:
 	cd pd2dsy && git submodule init
 	cd pd2dsy && git submodule update	
 	make -C pd2dsy/libdaisy
-	cp pd2dsy/hvcc/bin/hvcc pd2dsy/hvcc.py
+	pip install pd2dsy/hvcc
 
 clean:
 	- rm -r build $(TARGET).bin
