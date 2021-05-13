@@ -2,7 +2,7 @@ TARGET=passthru
 
 $(TARGET).bin: $(TARGET).pd
 	- rm -r build $(TARGET).bin
-	python pd2dsy/pd2dsy.py --board petal --hvcc_cmd 'python hvcc/hvcc.py' --out_dir $(PWD)/build $(TARGET).pd
+	python pd2dsy/pd2dsy.py --board petal --hvcc_cmd hvcc --out_dir $(PWD)/build $(TARGET).pd
 	make -C build
 	cp build/build/$(TARGET).bin .
 
