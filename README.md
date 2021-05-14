@@ -20,7 +20,7 @@ Clone your new repository locally and do a one time bootstrap:
 
     make bootstrap
 
-Replace `passthru.pd` with your own file. Edit `Makefile` so that TARGET
+Replace `patch.pd` with your own file. Edit `Makefile` so that TARGET
 is the base name of your file, without the `.pd` extension.
 
 # Building a .bin file
@@ -28,7 +28,7 @@ When your .pd file is ready to build a .bin, type
 
     make
     
-If all is successful, your .bin file will be in the `build/build` folder.
+If all is successful, your .bin file will be next to your .pd file.
 
 # Resources
 [Pure Data Manual](http://write.flossmanuals.net/pure-data/introduction2/)
@@ -37,3 +37,4 @@ If all is successful, your .bin file will be in the `build/build` folder.
 On Linuces, the required Python packages can be gotten with
 
     pip3 install enum34 jinja2
+
