@@ -1,4 +1,4 @@
-TARGET=passthru
+TARGET=patch
 
 $(TARGET).bin: $(TARGET).pd
 	- rm -r build $(TARGET).bin
