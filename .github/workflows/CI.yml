@@ -17,14 +17,19 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Inspect environment
-      run: python -V
+      run:
+        python -V
       
     - name: Install additional packages
-      run: sudo apt install python-enum34 python-jinja2
+      run:
+        sudo apt install python-enum34 python-jinja2
     
-    - name: Install Heavy compiler
-      run: !
+    - name: Checkout Heavy compiler
+      run:
         git clone -b wasted-audio git@github.com:rhalebian/hvcc ../hvcc
+        
+    - name: Install Heavy compiler
+      run:
         cd ../hvcc && python setup.py install
 
     - name: Install arm-none-eabi-gcc toolchain
@@ -39,4 +44,3 @@ jobs:
     - name: Build binary
       run:
         make
-
