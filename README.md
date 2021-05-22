@@ -9,7 +9,7 @@ Template for creating a Terrarium/Daisy binary from a Pure Data patch.
 
 Your local machine needs:
 
-* Python 3 (possibly 2)
+* Python 3
 * Python packages `enum` and `jinja2`
 * The `gcc-arm-none-eabi` compiler toolchain
 
