@@ -19,14 +19,14 @@ jobs:
     - name: Inspect environment
       run:
         python -V
+
+    - name: Checkout Heavy compiler
+      run:
+        git clone -b wasted-audio http://github.com/rhalebian/hvcc ../hvcc
       
     - name: Install additional packages
       run:
         sudo apt install python-enum34 python-jinja2
-    
-    - name: Checkout Heavy compiler
-      run:
-        git clone -b wasted-audio git@github.com:rhalebian/hvcc ../hvcc
         
     - name: Install Heavy compiler
       run:
