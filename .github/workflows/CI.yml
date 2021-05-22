@@ -19,7 +19,7 @@ jobs:
     - name: Install Heavy compiler
       run: |
         git clone -b wasted-audio http://github.com/rhaleblian/hvcc ../hvcc
-        sudo python setup.py install
+        cd ../hvcc && sudo python setup.py install
       
     - name: Install additional packages
       run:
