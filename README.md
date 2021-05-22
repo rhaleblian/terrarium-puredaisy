@@ -15,10 +15,9 @@ Your local machine needs:
 * Python 3
 * The `gcc-arm-none-eabi` compiler toolchain
 
-On WSL or Ubuntu you might
+On WSL or Ubuntu you might:
 
     sudo apt install python3 gcc-arm-none-eabi
-    pip3 install enum34 jinja2
 
 On macOS you can do same if you have Homebrew installed:
 
