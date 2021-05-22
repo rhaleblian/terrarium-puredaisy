@@ -7,21 +7,22 @@ Template for creating a Terrarium/Daisy binary from a Pure Data patch.
 
 # Prerequisites
 
-Your local machine needs:
-
-* Python 3
-* Python packages `enum` and `jinja2`
-* The `gcc-arm-none-eabi` compiler toolchain
-
 This template has been tested on macOS, Windows Subsystem for Linux
 and Ubuntu.
 
-For example, on WSL or Ubuntu you might
+Your local machine needs:
+
+* Python 3
+* The `gcc-arm-none-eabi` compiler toolchain
+
+On WSL or Ubuntu you might
 
     sudo apt install python3 gcc-arm-none-eabi
     pip3 install enum34 jinja2
 
-On macOS you can do same if you have Homebrew installed.
+On macOS you can do same if you have Homebrew installed:
+
+    brew install python3 gcc-arm-none-eabi
 
 
 # Setup
@@ -32,19 +33,22 @@ Clone your new repository locally and do a one time bootstrap:
 
     make bootstrap
 
-Then test build the existing patch:
+The process may want your input to install additional Python
+packages.
+
+Then test build the stand-in patch:
 
     make
 
-and program the daisy with `patch.bin.  The template patch is a
+and program the daisy with `patch.bin`.  The stand-in patch is a
 tremolo effect. Knob 1 controls the speed.
 
 
 # Making your own binary
 
-Replace `patch.pd` with your own Pd file.
-Edit `Makefile` so that TARGET is the base name of your file,
-without the `.pd` extension.
+Replace the stand-in patch `patch.pd` with your own Pd file.
+You can use your own name; edit `Makefile` so that TARGET
+is the base name of your file, without the `.pd` extension.
 
 When your .pd file is ready to build a .bin, type
 
