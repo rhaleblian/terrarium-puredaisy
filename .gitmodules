@@ -1,3 +1,5 @@
 [submodule "pd2dsy"]
 	path = pd2dsy
 	url = https://github.com/rhaleblian/pd2dsy
+        branch = develop
+

@@ -11,6 +11,7 @@ bootstrap:
 	git submodule update
 	cd pd2dsy && git submodule init
 	cd pd2dsy && git submodule update	
+	cd pd2dsy/hvcc && pip3 install .
 	make -C pd2dsy/libdaisy
 
 clean:
