@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, actions ]
   pull_request:
     branches: [ main ]
 
@@ -16,27 +16,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Inspect environment
-      run: python -V
-      
-    - name: Install additional packages
-      run: sudo apt install python-enum34 python-jinja2
-    
-    - name: Install Heavy compiler
-      run: !
-        git clone -b wasted-audio git@github.com:rhalebian/hvcc ../hvcc
-        cd ../hvcc && python setup.py install
-
     - name: Install arm-none-eabi-gcc toolchain
       uses: fiam/arm-none-eabi-gcc@v1
       with:
         release: '9-2019-q4'
         
-    - name: Bootstrap repositories
+    - name: Bootstrap repository
       run:
         make bootstrap
 
     - name: Build binary
       run:
         make
-
