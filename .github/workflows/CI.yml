@@ -16,6 +16,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install virtualenv creator
+      run:
+        apt install virtualenv
+
     - name: Install arm-none-eabi-gcc toolchain
       uses: fiam/arm-none-eabi-gcc@v1
       with:
