@@ -8,7 +8,7 @@ Template for creating a Terrarium/Daisy binary from a Pure Data patch.
 # Prerequisites
 
 This template has been tested on macOS, Windows Subsystem for Linux
-and Ubuntu.
+and Ubuntu.  Windows itself is not supported.
 
 Your local machine needs:
 
@@ -21,7 +21,7 @@ On WSL or Ubuntu you might:
 
 On macOS you can do same if you have Homebrew installed:
 
-    brew install python3 gcc-arm-none-eabi
+    brew install virtualenv python3 gcc-arm-none-eabi
 
 
 # Setup
