@@ -17,7 +17,7 @@ Your local machine needs:
 
 On WSL or Ubuntu you might:
 
-    sudo apt install python3 gcc-arm-none-eabi
+    sudo apt install virtualenv python3 gcc-arm-none-eabi
 
 On macOS you can do same if you have Homebrew installed:
 

@@ -2,7 +2,7 @@ TARGET=patch
 
 $(TARGET).bin: $(TARGET).pd
 	- rm -r build $(TARGET).bin
-	python3 pd2dsy/pd2dsy.py --hvcc_cmd hvcc --board petal --out_dir $(PWD)/build $(TARGET).pd
+	venv/bin/python pd2dsy/pd2dsy.py --hvcc_cmd ../venv/bin/hvcc --board petal --out_dir $(PWD)/build $(TARGET).pd
 	make -C build
 	cp build/build/$(TARGET).bin .
 
@@ -11,8 +11,9 @@ bootstrap:
 	git submodule update
 	cd pd2dsy && git submodule init
 	cd pd2dsy && git submodule update	
-	cd pd2dsy/hvcc && pip3 install .
 	make -C pd2dsy/libdaisy
+	virtualenv venv
+	venv/bin/pip install pd2dsy/hvcc
 
 clean:
 	- rm -r build $(TARGET).bin
