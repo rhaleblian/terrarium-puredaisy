@@ -18,7 +18,7 @@ jobs:
 
     - name: Install virtualenv creator
       run:
-        apt install virtualenv
+        sudo apt install virtualenv
 
     - name: Install arm-none-eabi-gcc toolchain
       uses: fiam/arm-none-eabi-gcc@v1
